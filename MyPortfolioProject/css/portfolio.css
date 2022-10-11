@@ -166,7 +166,105 @@ footer{
     from {top: -100vw;}
     to {top: 0vw;}
 }
+ /*SLIDESHOW STYLING*/
+#slideshow_background{
+    background: rgba(255,255,255,0.35);
+}
+.mySlides{
+    display: none; /*prevents image from being displayed, JS will display these*/
+}
 
+#slideshow_container{
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative; /* container relative to its normal positioning*/
+    margin: auto; /*horizontally centered*/
+}
+
+#slideshow_container a{
+    text-decoration: none;
+}
+
+.slideshow_images{
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(0,0,0,0.75);
+    width: 100%;
+}
+
+.Previous, .Next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.Next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.Previous:hover, .Next:hover{
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+
+.text{
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0,0,0,0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+.dot{
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: whtie;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+.active, .dot:hover{
+    background-color: black;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+    from{opacity: .4}
+    to{opacity: 1}
+}
+@keyframes fade{
+    from{opacity: .4}
+    to{opacity: 1}
+}
+
+/*Table styling*/
 * {
     box-sizing: border-box;
 }
@@ -174,31 +272,19 @@ footer{
 .Column_1{
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 3%;
+    padding: 1.6%;
     height: 600px;
     background-color: #f2f2f2;
-}
-
-@media screen and (max-width: 576px) {
-    .Column_1 {
-        overflow: auto;
-    }
 }
 
 .Column_2 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 1.9%;
+    padding: 1.6%;
     height: 600px;
     background-color: #4d4d4d;
 }
 
-.Column_tall{
-    padding-top: 3.5%;
-    height: 650px;
-}
 
 .Row:after{
     content: "";
@@ -207,47 +293,178 @@ footer{
 }
 
 /**CONTACT FORM**/
-input[type=text] {
+.Pop_Up_Button{
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: white;
+    color: black;
+    border: solid black;
+    cursor: pointer;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
+}
+
+@keyframes movePopup{
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+@-webkit-keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+.form-popup{
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+.form-container{
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: white;
+}
+
+
+.form-container input[type=text] {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    font-family: Perpetua, Rockwell Extra Bold;
+    padding: .93vw;
+    border: none;
+    margin: .6vw 0 .6vw 0;
+    background: Gainsboro;
+    font-size: 1vw;
 }
 
 input[type=text]:hover{
     box-shadow: 0 0 5px #00004d inset;
 }
 
-/*SUBMIT*/
-input[type=submit]{
-    background-color: black;
-    color: white;
+/*buttons*/
+button{
+    font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
     font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
+    padding: 1.5vw;
     cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Perpetua, Rockwell Extra Bold;
+    width: 100%;
+    height: auto;
 }
 
-input[type=submit]:hover{
+button:hover, .form-container .btn:hover{
+    color: white;
+    background-color: black;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: silver;
+}
+
+.form-container .btn{
     background-color: white;
     color: black;
-    transform: scale(1.5);
-    transition: transform 1.5s;
+    border-color: black;
+    margin-bottom: 1vh;
 }
 
-form {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    font-family: 'Trebuchet MS', Optima;
+.form-container .cancel{
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+.form-container .cancel:hover{
+    color: white;
+    background-color: darkred;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+
+/*media query section - for different screen sizes*/
+
+/**Paragraph font size**/
+@media screen and (max-width: 527px) {
+    p {
+        font-size: 3.75vw;
+    }
+}
+@media screen and (min-width: 528px) and (max-width: 660px) {
+    p {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (min-width: 661px) and (max-width: 799px) {
+    p {
+        font-size: 2.75vw;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 924px) {
+    p {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+    p {
+        font-size: 2.25vw;
+    }
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1310px) {
+    p {
+        font-size: 2vw;
+    } 
+}
+
+@media screen and (min-width: 1311px) and (max-width: 1535px) {
+    p {
+        font-size: 1.75vw;
+    }
+}
+
+@media screen and (min-width: 1536px) and (max-width: 2269px) {
+    p {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 2270px) {
+    p {
+        font-size: 1.35vw;
+    }
+}
+
+/**NAV BAR**/
+@media screen and (max-width: 1080px) {
+    .Navbar a{
+        width: 20%; /* This sets each navbar link to 1/5 of the navbar */
+        font-size: 2.5vw;
+    }
+}
+/**enlarge the font of the white text for smaller screens**/
+@media screen and (max-width: 1080px) {
+    .white-text {
+        font-size: 4.5vw;
+    }
+}
+/**increase the size of the columns for larger screens**/
+@media screen and (min-width: 1725px) {
+    .Column_1 {
+        height: 550px;
+    }
+    .Column_2 {
+        height: 550px;
+    }
+}
+/**Remove margin-top from h1 elements for extra large screens (so that the paragraph text fits in the column**/
+@media screen and (min-width: 2000px) {
+    h1{
+        margin-top: 0;
+    }
 }
