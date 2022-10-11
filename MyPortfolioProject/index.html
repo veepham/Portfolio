@@ -6,21 +6,24 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Vivian Pham</title>
+        <link rel="shortcut icon" type="img/jpg" href=""> <!--icon for title-->
         <link rel="stylesheet" type="text/css" href="css/portfolio.css">
     </head>
+
+
 <!--BODY-->
     <body class="background">
 
         <!--NAV BAR-->
         <div class="navbar">
             <a class="active" href="#home">Home</a>
+            <a href="#slideshow">Slideshow</a>
             <a href="#about">About</a>
             <a href="#github">GitHub</a>
-            <a href="#contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
-        <br>
-        <br>
+        
 
         <!--Backgound Photo-->
         <div id="home">
@@ -37,6 +40,56 @@
             </strong>
         </div>
 
+        <!--Slideshow section-->
+        <div id="slideshow">
+            <div id="slideshow_background">
+                <div id="slideshow_container">
+                    <!--slide 1-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="" alt="">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!--slide 2-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="" alt="">
+                        <div class="text"></div>
+                    </div>
+                    <!--slide 3-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="" alt="">
+                        <div class="text"></div>
+                    </div>
+                    <!--slide 4-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="" alt="">
+                        <div class="text"></div>
+                    </div>
+                    <!--slide 5-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="" alt="">
+                        <div class="text"></div>
+                    </div>
+                    <!--slide 6-->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="" alt="">
+                        <div class="text"></div>
+                    </div>
+                    <!--Prev and Next Buttons-->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align: center"> <!--DOTS FOR SLIDEHOW-->
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                    <span class="dot" onclick="currentSlide(5)"></span> 
+                    <span class="dot" onclick="currentSlide(6)"></span> 
+                </div>
+            </div>
+        </div>
+
         <!--About-->
         <div class="Row" id="about">
             <!--Left Column-->
@@ -49,16 +102,8 @@
                 <p>
                     I am a software developer who loves solving problems and combing through and perfecting small details. In my free time, I love eating food, trying new restaurants, and traveling.
                     <br>
-                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a> where I underwent the Software Developer Boot Camp. I have trained and completed projects in the following web and programming languages:
-                        <ul>
-                            <li>HTML and CSS</li>
-                            <li>Javascript</li>
-                            <li>SQL</li>
-                            <li>C#</li>
-                            <li>Python</li>
-                            <li>...and more!</li>
-                        </ul>
-                    <br><p>As a full-stack developer, I would love to work with you. <a href="#contact">Contact me</a> below!</p>
+                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a> where I underwent the Software Developer Boot Camp. I have trained and completed projects in HTML and CSS, Javascript, SQL, C#, Python, and more!
+                    <br><p>As a full-stack developer, I would love to work with you. <a onclick="openForm()" class="contact">Contact me</a> below!</p>
                 </p>
             </div>
         </div>
@@ -83,23 +128,21 @@
         </div>
         
         
-        <!--Contact-->
-        <div class="Row" id="contact">
-            <!--Contact Image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="img/stock-palm.jpg" alt="palm tree">
-            </div>
-            <!--Contact Form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact Me</h1>
-                <form action="https://formspree.io/f/mjvzgand" method="POST">
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Plese enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+        <!--Contact Pop Up Form-->
+        <div id="contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/mjvzgand" method="POST" class="form-container"></form>
+                    <h1>Contact Me</h1>
+                    <label for="name"><b>Name:</b></label>
+                        <input type="text" placeholder="Please enter your name here" name="name" required>
+                    <label for="email"><b>Email:</b></label>
+                        <input type="text" id="Email" name="Email" placeholder="Plese enter your email here" name="email" required>
+                    <label for="message"><b>Message:</b></label>
+                        <input type="text" id="Message" name="Message" placeholder="Please write your message here" name="message" required>
+                    
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn-cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
@@ -111,5 +154,6 @@
                 <br>
             </p>
         </footer>
+        <script src="JS/portfolio.js"></script>
     </body>
 </html>
