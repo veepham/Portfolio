@@ -1,0 +1,76 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Vivian Pham";
+}
+
+@*<style>
+        body{
+            background: linear-gradient(to right, #ECAEDE 0%, #ECAEDE 35%,#000000 35%,white 35%,white 100%);
+        }
+    </style>*@
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-4 mx-auto">
+                <div class="card mx-auto shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body" style="background-color:#f2c9e9">
+                        <center>
+                        <img src="img/me.jpg" class="img-fluid rounded-circle" width="200" />
+                        <h2 class="py-2"><big>Vivian <br /> Pham</big></h2>
+
+                        <hr />
+
+                            <br />
+                            <p><BIG>WEB DEVELOPER</BIG></p>
+                            </center>
+                    </div> 
+                    <div class="card-footer " style="background-color:white">
+                        <center>
+                            <a style="color: mediumpurple;" class="py-2 px-3" href="https://www.linkedin.com/in/vivian-pham1/"><i class="fab fa-2x fa-linkedin"></i></a>
+                            <a style="color: mediumpurple;" class="py-2 px-3" href="https://github.com/veepham"><i class="fab fa-2x fa-github"></i></a> 
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 ">
+                <h1 class="py-1" style="font-size: 100px;"><big><b>Hello</b></big></h1>
+                <p class="py-1" style="font-size: 25px;">Welcome to my portfolio website</p>
+                <div class="d-grid gap-2  d-md-block text-center">
+                    <button id="regular" class="btn px-5" style="border-radius:50px; background-color:#ECAEDE"><a asp-page="/Projects">Check Out My Projects!</a></button>                 
+                </div>
+                <br />
+
+                <p style="letter-spacing: 2px;">I am a highly skilled, competent, and detail-oriented <br /> 
+                    individual, capable of intuitive problem-solving. Trained in <br />
+                    HTML, CSS, Bootstrap, JavaScript, Python, C#, .NET <br />
+                    Framework, ASP.NET, MVC, back end development, <br />
+                    databases and SQL. Passionate about building and troubleshooting new projects.<br />
+                    <br />
+                    Looking to start a career as a software engineer!</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="contact">
+        <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+        <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/f/mjvzgand" method="POST" class="formContainer"></form>
+                <h1>Contact Me</h1>
+                <label for="name"><b>Name:</b></label>
+                    <input type="text" placeholder="Please enter your name here" name="name" required>
+                <label for="email"><b>Email:</b></label>
+                    <input type="text" id="Email" name="Email" placeholder="Plese enter your email here" required>
+                <label for="message"><b>Message:</b></label>
+                    <input type="text" id="Message" name="Message" placeholder="Please write your message here" required>
+                    
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn-cancel" onclick="closeForm()">CLOSE</button>                
+        </div>
+    </div>
+

@@ -1,0 +1,40 @@
+﻿@page
+@model Portfolio.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact Me";
+}
+
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-6">
+            <h1>Contact Me</h1>            
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-6">             
+            <p>Please feel free to contact me with any inquiries or if you would just like to chat!</p>
+            <b>LinkedIn: </b><p>https://www.linkedin.com/in/vivian-pham1/</p>
+            <b>Email: </b><p>viv.pham615@gmail.com</p>
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+        <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+        <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/f/mjvzgand" method="POST" class="formContainer"></form>
+                <h1>Contact Me</h1>
+                <label for="name"><b>Name:</b></label>
+                    <input type="text" placeholder="Please enter your name here" name="name" required>
+                <label for="email"><b>Email:</b></label>
+                    <input type="text" id="Email" name="Email" placeholder="Plese enter your email here" required>
+                <label for="message"><b>Message:</b></label>
+                    <input type="text" id="Message" name="Message" placeholder="Please write your message here" required>
+
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn-cancel" onclick="closeForm()">CLOSE</button>                
+        </div>
+    </div>
